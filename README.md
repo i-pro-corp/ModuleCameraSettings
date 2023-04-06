@@ -6,6 +6,8 @@ Wireless network connection setting file creation tool for i-PRO module camera.
 
 ## The way to build ModuleCameraSettings
 
+You can build the source code using Visual Studio 2019/2022 or by following the steps below.
+
 1. Download and install the latest version of .NET SDK corresponding to architecture.  
 [Download .NET 7.0 (Linux, macOS, and Windows) (microsoft.com)
 ](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
