@@ -1,0 +1,125 @@
+﻿<Window
+    x:Class="ModuleCameraSettings.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:ModuleCameraSettings.ViewModels"
+    xmlns:views="clr-namespace:ModuleCameraSettings.Views"
+    Title="Wireless network connection setting file creation tool"
+    Width="600"
+    Height="500"
+    FontSize="16"
+    ResizeMode="CanResizeWithGrip"
+    mc:Ignorable="d">
+
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Grid Margin="20,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Text="SSID" />
+        <TextBox
+            Grid.Row="0"
+            Grid.Column="1"
+            MaxLength="32"
+            Text="{Binding Settings.Ssid, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Network key" />
+        <TextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            MaxLength="63"
+            Text="{Binding Settings.NetworkKey, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Communication mode" />
+        <ComboBox
+            Grid.Row="2"
+            Grid.Column="1"
+            ItemsSource="{Binding Source={StaticResource CommunicationModeProvider}}"
+            SelectedItem="{Binding Settings.CommunicationMode}" />
+
+        <TextBlock
+            Grid.Row="3"
+            Grid.Column="0"
+            Text="Encryption method" />
+        <ComboBox
+            Grid.Row="3"
+            Grid.Column="1"
+            ItemsSource="{Binding Source={StaticResource EncryptionMethodProvider}}"
+            SelectedItem="{Binding Settings.EncryptionMethod}" />
+
+        <TextBlock
+            Grid.Row="4"
+            Grid.Column="0"
+            Text="Network Settings" />
+        <ComboBox
+            Grid.Row="4"
+            Grid.Column="1"
+            ItemsSource="{Binding Source={StaticResource NetworkSettingProvider}}"
+            SelectedItem="{Binding Settings.NetworkSetting}" />
+
+        <TextBlock
+            Grid.Row="5"
+            Grid.Column="0"
+            Text="IP address (IPv4)" />
+        <views:IpV4TextView
+            Grid.Row="5"
+            Grid.Column="1"
+            DataContext="{Binding Settings.IpAddress}"
+            IsEnabled="{Binding DataContext.Settings.RequireIpAddress, RelativeSource={RelativeSource AncestorType={x:Type views:MainWindow}}}" />
+
+        <TextBlock
+            Grid.Row="6"
+            Grid.Column="0"
+            Text="Subnet mask" />
+        <views:IpV4TextView
+            Grid.Row="6"
+            Grid.Column="1"
+            DataContext="{Binding Settings.SubnetMask}"
+            IsEnabled="{Binding DataContext.Settings.RequireIpAddress, RelativeSource={RelativeSource AncestorType={x:Type views:MainWindow}}}" />
+
+        <TextBlock
+            Grid.Row="7"
+            Grid.Column="0"
+            Text="Default gateway" />
+        <views:IpV4TextView
+            Grid.Row="7"
+            Grid.Column="1"
+            DataContext="{Binding Settings.DefaultGateway}"
+            IsEnabled="{Binding DataContext.Settings.RequireIpAddress, RelativeSource={RelativeSource AncestorType={x:Type views:MainWindow}}}" />
+
+        <Button
+            Grid.Row="8"
+            Grid.ColumnSpan="2"
+            Margin="20,10"
+            Padding="5"
+            Command="{Binding SaveFileCommand}"
+            Content="Save file" />
+    </Grid>
+</Window>

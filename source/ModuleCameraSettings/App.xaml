@@ -1,0 +1,62 @@
+﻿<Application
+    x:Class="ModuleCameraSettings.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:ModuleCameraSettings"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:views="clr-namespace:ModuleCameraSettings.Views"
+    StartupUri="Views/MainWindow.xaml">
+
+    <Application.Resources>
+        <ObjectDataProvider
+            x:Key="CommunicationModeProvider"
+            MethodName="GetValues"
+            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Enums+CommunicationMode" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider
+            x:Key="EncryptionMethodProvider"
+            MethodName="GetValues"
+            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Enums+EncryptionMethod" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <ObjectDataProvider
+            x:Key="NetworkSettingProvider"
+            MethodName="GetValues"
+            ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Enums+NetworkSetting" />
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="10,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="10,0" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <DataTemplate x:Key="EnumDescriptionTemplate">
+            <TextBlock Margin="0" Text="{Binding Converter={x:Static views:EnumDescriptionConverter.Shared}}" />
+        </DataTemplate>
+
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Margin" Value="10,0" />
+            <Setter Property="ItemTemplate" Value="{StaticResource EnumDescriptionTemplate}" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type views:IpV4TextView}">
+            <Setter Property="Margin" Value="10,0" />
+        </Style>
+    </Application.Resources>
+</Application>
