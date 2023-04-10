@@ -2,6 +2,8 @@
 
 "__Wireless network connection setting file__" creation tool for i-PRO module camera.
 
+i-PRO モジュールカメラのための "__無線接続設定ファイル__" を作成するツールです。
+
 ---
 
 ## Summary
