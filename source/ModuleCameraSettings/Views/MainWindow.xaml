@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModels="clr-namespace:ModuleCameraSettings.ViewModels"
     xmlns:views="clr-namespace:ModuleCameraSettings.Views"
-    Title="Wireless network connection setting file creation tool"
+    Title="Module Camera Settings"
     Width="600"
     Height="500"
     FontSize="16"

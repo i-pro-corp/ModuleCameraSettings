@@ -8,7 +8,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>mcs</AssemblyName>
     <Company>i-PRO Co., Ltd.</Company>
-    <Product>ModuleCameraSettings</Product>
+    <Product>Module Camera Settings</Product>
     <Copyright>Copyright  2023  i-PRO Co., Ltd.</Copyright>
     <PackageProjectUrl>https://github.com/i-pro-corp/ModuleCameraSettings</PackageProjectUrl>
     <Description>Wireless network connection setting file creation tool for i-PRO module camera.</Description>
