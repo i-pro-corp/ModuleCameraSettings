@@ -15,9 +15,9 @@
 
 1. Launch the "Module Camera Settings" tool (mcs.exe).
 1. Enter the information required for wireless connection on the tool screen.
-1. Click the [Save file] button to save the "wireless network connection setting file".
+1. Click the [Save file] button to save the "wireless network connection setting file".  
 __IMPORTANT__: You MUST save the filename as "MCS-INIT".
-1. Save the "wireless network connection setting file" to the microSD.
+1. Save the "wireless network connection setting file" to the microSD.  
 __IMPORTANT__: You MUST save to the root of the microSD.
 1. Insert the microSD into the i-PRO camera body.
 1. Turn on the power of the i-PRO camera. Automatically configure wireless settings for i-PRO cameras.
@@ -48,9 +48,9 @@ You can build the source code using Visual Studio 2019/2022 or by following the 
 
 1. "Module Camera Settings" ツール (mcs.exe) を起動します。
 1. ツール画面上に無線接続に必要な情報を入力します。
-1. [Save file] ボタンをクリックすることで "無線接続設定ファイル" を保存します。
+1. [Save file] ボタンをクリックすることで "無線接続設定ファイル" を保存します。  
 __重要__: 必ずファイル名を "MCS-INIT" として保存してください。
-1. "無線接続設定ファイル" を microSD カードに保存します。
+1. "無線接続設定ファイル" を microSD カードに保存します。  
 __重要__: 必ず microSD カードのルートに保存してください。
 1. microSD カードを i-PRO カメラへ挿入します。
 1. i-PRO カメラの電源を On にします。i-PRO カメラの無線設定を自動的に行います。
