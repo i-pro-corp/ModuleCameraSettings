@@ -1,8 +1,10 @@
 # Module Camera Settings (mcs.exe)
 
 "__Wireless network connection setting file__" creation tool for i-PRO module camera.
+This tool is an application for Microsoft Windows programmed using the .NET Framework and C#.
 
 i-PRO モジュールカメラのための "__無線接続設定ファイル__" を作成するツールです。
+.NET Framework と C# を使って作成された Microsoft Windows 用のアプリケーションです。
 
 ---
 
